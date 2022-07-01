@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Counter from './Counter';
+import CountUp from './CountUp';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type='text' />
+      {/* <Counter from='100' to='5000' duration='3' /> */}
+      <CountUp start={100} end={5000} timer={30} />
     </div>
   );
 }

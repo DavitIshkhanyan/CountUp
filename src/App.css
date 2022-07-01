@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  --c: red;
+  --white: #ffffff;
+}
+
+
+/* @property --num {
+  syntax: '<integer>';
+  initial-value: 100;
+  inherits: false;
+} */
+/* @keyframes example {
+  from {--num: 0;}
+  to {--num: 5000;}
+} */
+
+.a {
+  transition: --num;
+  counter-reset: num var(--num);
+  /* animation-name: example;
+  animation-duration: 1s;
+  animation-direction: normal; */
+}
+/* .b {
+  --num: 5000;
+} */
+
+
+.a::after {
+  content: counter(num);
+}
