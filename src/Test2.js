@@ -38,9 +38,10 @@ import { useState, useEffect } from 'react';
 
 const Test = ({start = 0, end = 5000, timer = 50}) => {
     const [progress, setProgress] = useState(0);
+    const [n, setN] = useState(start);
     let animationDuration = timer;
-    let count = Math.floor(progress * end);
-
+    let count = Math.floor(n * end);
+    // console.log(progress);
     useEffect(() => {
         let startAnimation = Date.now();
         const tick = () => {
@@ -48,7 +49,12 @@ const Test = ({start = 0, end = 5000, timer = 50}) => {
               1,
               (Date.now() - startAnimation) / animationDuration
             );
+            const n = Math.min(
+                1,
+                (start / end) + ((Date.now() - startAnimation) / animationDuration)
+              );
             setProgress(progress);
+            setN(n);
             // console.log(state * end);
             if (progress < 1) {
               setTimeout(tick);
@@ -65,7 +71,8 @@ const Test = ({start = 0, end = 5000, timer = 50}) => {
           {Math.floor(state * 21)} talks ·
           {Math.floor(state * 4)} workshops ·
           {Math.floor(state * 350)} attendees */}
-          {start > count ? start : count}
+          {/* {start > count ? start : count} */}
+          {count}
         </div>
       );
 
