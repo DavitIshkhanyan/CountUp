@@ -39,7 +39,8 @@ import { useState, useEffect } from 'react';
 const Test = ({start = 0, end = 5000, timer = 50}) => {
     const [progress, setProgress] = useState(start);
     let animationDuration = timer;
-    let count = Math.floor(progress * end);
+    // let count = Math.floor(progress * end);
+    let count = Math.floor(progress * (end - start) + start);
 
     useEffect(() => {
         let startAnimation = Date.now();
@@ -63,7 +64,8 @@ const Test = ({start = 0, end = 5000, timer = 50}) => {
           {Math.floor(state * 21)} talks ·
           {Math.floor(state * 4)} workshops ·
           {Math.floor(state * 350)} attendees */}
-          {start > count ? start : count}
+          {/* {start > count ? start : count} */}
+          {count}
         </div>
       );
 

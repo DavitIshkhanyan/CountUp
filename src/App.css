@@ -37,28 +37,43 @@
   }
 }
 
-:root {
-  --c: red;
-  --white: #ffffff;
-}
 
 
-/* @property --num {
+
+
+
+
+@property --num {
   syntax: '<integer>';
-  initial-value: 100;
+  initial-value: 0;
   inherits: false;
-} */
+}
 /* @keyframes example {
   from {--num: 0;}
   to {--num: 5000;}
 } */
 
 .a {
-  transition: --num;
+  transition-property: --num;
+  transition-timing-function: ease-out;
+  /* transition-timing-function: cubic-bezier(0,0,0.8,1); */
+  /* transition-timing-function: cubic-bezier(0,0,.15,.88); */
+  /* transition-timing-function: cubic-bezier(0,0,.01,1); */
+  /*transition-timing-function: cubic-bezier(0,0,0,1);*/ /* lava */
+  /* transition-timing-function: cubic-bezier(.84,.74,.23,.85); */
+
+  /* transition: --num cubic-bezier(.2,1,.9,-0.5); ??????????????????????????????????????????????????????????????*/
+
+
+  /* transition-timing-function: cubic-bezier(.2,1,.9,-0.5); */
+  /* transition-timing-function: cubic-bezier(0,0,.17,1.26); */ /* avelanuma heto ijnum  ?????????????????????????????????? */
   counter-reset: num var(--num);
   /* animation-name: example;
   animation-duration: 1s;
   animation-direction: normal; */
+  
+  
+  /* --num: 0; */
 }
 /* .b {
   --num: 5000;
